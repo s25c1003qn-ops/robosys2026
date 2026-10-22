@@ -3,6 +3,6 @@ import sys
 
 x = 0.0
 for line in sys.stdin:
-    x += float(line)
+     x += tonum(line.rstrip()) 
 
 print(x)
