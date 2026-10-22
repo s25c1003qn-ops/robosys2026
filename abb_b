@@ -10,8 +10,6 @@ def tonum(s):
 
 
 for line in sys.stdin:
-    line = line.rstrip()    #for文の下にこの行を挿入
-    x += tonum(line)
-
+     x += tonum(line.rstrip()) 
 
 print(x)
