@@ -6,4 +6,4 @@
 - このパッケージのコードは、下記のスライド（CC BY-SA 4.0 by Taro Suzuki）のものを、
   本人の許可を得て自身の著作としたものです。
     - https://github.com/tarolab-cit/lectures/tree/main/robosys2026
-- © 2026 Taro Suzuki
+- © 2026 abe toshiaki
