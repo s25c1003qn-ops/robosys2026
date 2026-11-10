@@ -1,4 +1,6 @@
 #! /usr/bin/python3
 
 import sys
-print(sys.argv)
+x = 0.0
+x = float(sys.argv[1]) * 150
+print(float(sys.argv[1]))
