@@ -1,6 +1,21 @@
 #! /usr/bin/python3
 
 import sys
+
 x = 0.0
-x = float(sys.argv[1]) * 150
-print(float(sys.argv[1]))
+f = "数値"
+t = "時間の単位(分→minute、時間→hour))"
+if len(sys.argv) < 3:
+    print("６時間以内の三井カーシェアベーシックプランベーシッククラスの時間料金を計算します、{f}と{t}を入力してください")
+    exit()
+elif len(sys.argv) == 3:
+    if sys.argv[2] == "minute":
+        float(sys.argv[1]) /= 60
+    if sys.argc[1] <= 6:
+        x = float(sys.argv[1]) * 900
+else:
+    print("{f}の{t}を正確に入力してください")
+        exit()
+else:
+    print("{f}と{t}のみを入力してください")
+    exit()
