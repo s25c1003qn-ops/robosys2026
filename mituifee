@@ -13,6 +13,11 @@ elif len(sys.argv) == 3:
         float(sys.argv[1]) /= 60
     if sys.argc[1] <= 6:
         x = float(sys.argv[1]) * 900
+        if x >= 4280:
+            x = 4280
+    else:
+        print("6時間以上なので距離料金を含めて計算する必要があります")
+
 else:
     print("{f}の{t}を正確に入力してください")
         exit()
