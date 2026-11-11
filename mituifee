@@ -6,21 +6,25 @@ x = 0.0
 f = "数値"
 t = "時間の単位(分→minute、時間→hour))"
 if len(sys.argv) < 3:
-    print("６時間以内の三井カーシェアベーシックプランベーシッククラスの時間料金を計算します、{f}と{t}を入力してください")
+    print("{f}と{t}を入力してください")
     exit()
 elif len(sys.argv) == 3:
     if sys.argv[2] == "minute":
-        float(sys.argv[1]) /= 60
-    if sys.argc[1] <= 6:
-        x = float(sys.argv[1]) * 900
+        x = float(sys.argv[1]) / 60
+    elif sys.argv[2] == "hour":
+        x = float(sys.argv[1])
+    else:
+        print("{t}を正確に入力してください")
+        exit()
+    if x <= 6:
+        x *= 900
         if x >= 4280:
             x = 4280
     else:
         print("6時間以上なので距離料金を含めて計算する必要があります")
-
-else:
-    print("{f}の{t}を正確に入力してください")
         exit()
 else:
     print("{f}と{t}のみを入力してください")
     exit()
+print(x)
+exit()
