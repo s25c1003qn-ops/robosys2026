@@ -1,7 +1,7 @@
 # robosys2026
 このリポジトリはロボシスの授業で使用するリポジトリを公開します。
 
-![test](https://github.com)
+[![test](https://github.com/s25c1003qn-ops/robosys2026/actions/workflows/test.yml/badge.svg)](https://github.com/s25c1003qn-ops/robosys2026/actions/workflows/test.yml)
 
 ## コマンド一覧
 
