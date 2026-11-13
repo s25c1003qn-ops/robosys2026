@@ -13,4 +13,7 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
     - name: All test
-      run: bash -xv ./test.bash
+      run: |
+        bash -xv ./test.bash
+        bash -xv ./mituifee_test.bash
+
