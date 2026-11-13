@@ -8,19 +8,19 @@ x = 0.0
 f= "乗車した"
 t = "の数値を入力してください"
 if len(sys.argv) < 3:
-    print("入力が足りません、{f}時間と分{t}")
-    exit()
+    print(f"入力が足りません、{f}時間と分{t}")
+    exit(1)
 elif len(sys.argv) == 3:
-    x = float(sys.argv[2]) / 60 + float(sys.argv[3])
+    x = float(sys.argv[2]) / 60 + float(sys.argv[1])
     if x <= 6:
         x *= 900
         if x >= 4280:
             x = 4280
     else:
         print("6時間以上なので距離料金を含めて計算する必要があります")
-        exit()
+        exit(1)
 else:
-    print("入力が多すぎます、{f}時間と分{t}")
-    exit()
+    print(f"入力が多すぎます、{f}時間と分{t}")
+    exit(1)
 print(x)
-exit()
+exit(0)
