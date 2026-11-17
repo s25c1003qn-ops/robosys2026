@@ -4,30 +4,94 @@
 
 import sys
 
+piped_data = sys.stdin.read().strip()
+
+extra_arg = sys.argv if len(sys.argv) > 1 else "追加無し"
+
 x = 0.0
 y = 0.0
-f= "乗車した"
-t = "の数値を入力してください"
-if len(sys.argv) < 3:
-    print(f"入力が足りません、{f}時間と分{t}")
+f= "車両のクラス(ベーシック(B)、ミドル(m)、ミドルプラス(mp)、プレミアム(p)、プレミアムプラス(PP))、乗車した時間と分、6時間以上の場合は走行距離も入力してください"
+
+if len(sys.argv) < 4:
+    print(f"入力が足りません、{f}")
     exit(1)
-elif 2 < len(sys.argv) < 5:
-    x = -(-float(sys.argv[2]) // 10) * 10 + float(sys.argv[1]) * 60
-    y = x * 15
-    if 4280 <= y <= 5400:
-        y = 4280.0
-    elif 5700 <= y <= 10800:
-        y = 5700.0
-    elif 7300 <= y <= 21600:
-        y = 7300.0
-    if x > 360:
-        if len(sys.argv) == 4:
-            y += float(sys.argv[3]) * 21
-        else:
-            print("6時間以上なので距離料金を含めて計算する必要があります、走行距離を入力してください")
-            exit(1)
+elif 3 < len(sys.argv) < 6:
+    x = -(-float(sys.argv[3]) // 10) * 10 + float(sys.argv[2]) * 60
+    if float(sys.argv[1]) == "B":
+        y = x * 15
+        if 4280 <= y <= 5400:
+            y = 4280.0
+        elif 5700 <= y <= 10800:
+            y = 5700.0
+        elif 7300 <= y <= 21600:
+            y = 7300.0
+        if x > 360:
+            if len(sys.argv) == 5:
+                y += float(sys.argv[4]) * 21
+            else:
+                print("6時間以上なので距離料金を含めて計算する必要があります、走行距離を入力してください")
+                exit(1)
+    elif float(sys.argv[1]) == "m":
+        y = x * 19
+        if 5280 <= y <= 6840:
+            y = 5280.0
+        elif 7200 <= y <= 13680:
+            y = 7200.0
+        elif 8500 <= y <= 27360:
+            y = 8500.0
+        if x > 360:
+            if len(sys.argv) == 5:
+                y += float(sys.argv[4]) * 21
+            else:
+                print("6時間以上なので距離料金を含めて計算する必要があります、走行距離を入力してください")
+                exit(1)
+    elif float(sys.argv[1]) == "mp":
+        y = x * 22
+        if 5980 <= y <= 7920:
+            y = 5980.0
+        elif 8300 <= y <= 15840:
+            y = 8300.0
+        elif 10100 <= y <= 31680:
+            y = 10100.0
+        if x > 360:
+            if len(sys.argv) == 5:
+                y += float(sys.argv[4]) * 21
+            else:
+                print("6時間以上なので距離料金を含めて計算する必要があります、走行距離を入力してください")
+                exit(1)
+    elif float(sys.argv[1]) == "p":
+        y = x * 29
+        if 8680 <= y <= 10440:
+            y = 8680.0
+        elif 9900 <= y <= 20880:
+            y = 9900.0
+        elif 12100 <= y <= 41760:
+            y = 12100.0
+        if x > 360:
+            if len(sys.argv) == 5:
+                y += float(sys.argv[4]) * 23
+            else:
+                print("6時間以上なので距離料金を含めて計算する必要があります、走行距離を入力してください")
+                exit(1)
+    elif float(sys.argv[1]) == "pp":
+        y = x * 52
+        if 11780 <= y <= 18720:
+            y = 11780.0
+        elif 13900 <= y <= 37440:
+            y = 13900.0
+        elif 16900 <= y <= 74880:
+            y = 16900.0
+        if x > 360:
+            if len(sys.argv) == 5:
+                y += float(sys.argv[4]) * 25
+            else:
+                print("6時間以上なので距離料金を含めて計算する必要があります、走行距離を入力してください")
+                exit(1)
+    else:
+        print("車種クラスを正しく入力してください、{f}")
+        exit(1)
 else:
-    print(f"入力が多すぎます、{f}時間と分{t}")
+    print(f"入力が多すぎます、{f}")
     exit(1)
 print(y)
 exit(0)
