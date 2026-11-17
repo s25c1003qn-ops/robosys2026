@@ -17,7 +17,7 @@ if len(sys.argv) < 4:
     exit(1)
 elif 3 < len(sys.argv) < 6:
     x = -(-float(sys.argv[3]) // 10) * 10 + float(sys.argv[2]) * 60
-    if float(sys.argv[1]) == "b":
+    if sys.argv[1] == "b":
         y = x * 15
         if 4280 <= y <= 5400:
             y = 4280.0
@@ -31,7 +31,7 @@ elif 3 < len(sys.argv) < 6:
             else:
                 print("6時間以上なので距離料金を含めて計算する必要があります、走行距離を入力してください")
                 exit(1)
-    elif float(sys.argv[1]) == "m":
+    elif sys.argv[1] == "m":
         y = x * 19
         if 5280 <= y <= 6840:
             y = 5280.0
@@ -45,7 +45,7 @@ elif 3 < len(sys.argv) < 6:
             else:
                 print("6時間以上なので距離料金を含めて計算する必要があります、走行距離を入力してください")
                 exit(1)
-    elif float(sys.argv[1]) == "mp":
+    elif sys.argv[1] == "mp":
         y = x * 22
         if 5980 <= y <= 7920:
             y = 5980.0
@@ -59,7 +59,7 @@ elif 3 < len(sys.argv) < 6:
             else:
                 print("6時間以上なので距離料金を含めて計算する必要があります、走行距離を入力してください")
                 exit(1)
-    elif float(sys.argv[1]) == "p":
+    elif sys.argv[1] == "p":
         y = x * 29
         if 8680 <= y <= 10440:
             y = 8680.0
@@ -73,7 +73,7 @@ elif 3 < len(sys.argv) < 6:
             else:
                 print("6時間以上なので距離料金を含めて計算する必要があります、走行距離を入力してください")
                 exit(1)
-    elif float(sys.argv[1]) == "pp":
+    elif sys.argv[1] == "pp":
         y = x * 52
         if 11780 <= y <= 18720:
             y = 11780.0
