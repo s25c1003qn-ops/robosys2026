@@ -9,7 +9,7 @@ ng () {
 
 res=0
 
-out=$(./mituifee 1 30)
+out=$(./mituifee 1 30 90)
 [ "$?" = 0 ]||ng "$LINENO"
 [ "${out}" = "1350.0" ]||ng "$LINENO"
 
@@ -17,14 +17,44 @@ out=$(./mituifee 1 35)
 [ "$?" = 0 ]||ng "$LINENO"
 [ "${out}" = "1500.0" ]||ng "$LINENO"
 
-out=$(./mituifee 4 46)
+out=$(./mituifee 4 46 90)
 [ "$?" = 0 ]||ng "LINENO"
 [ "${out}" = "4280" ]||ng "$LINENO"
 
-out=$(./mituifee 6 1)
-[ "$?" = 1 ]||ng "$LINENO"
+out=$(./mituifee 6 0 90)
+[ "$?" = 0 ]||ng "$LINENO"
+[ "${out}" = "4280.0" ]||ng "$LINENO"
+
+out=$(,.mituifee 6 5 90)
+[ "$?" = 0 ]||ng "$LINENO"
+[ "$out" = "6320.0" ]||ng "$LINENO"
+
+out=$(,.mituifee 12 0 90)
+[ "$?" = 0 ]||ng "$LINENO"
+[ "$out" = "5700.0" ]||ng "$LINENO"
+
+out=$(,.mituifee 12 5 90)
+[ "$?" = 0 ]||ng "$LINENO"
+[ "$out" = "10950.0" ]||ng "$LINENO"
+
+out=$(,.mituifee 24 0 90)
+[ "$?" = 0 ]||ng "$LINENO"
+[ "$out" = "7300.0" ]||ng "$LINENO"
+
+out=$(,.mituifee 24 5 90)
+[ "$?" = 0 ]||ng "$LINENO"
+[ "$out" = "21750.0" ]||ng "$LINENO"
 
 out=$(./mituifee)
+[ "$?" = 1 ]||ng "$LINENO"
+
+out=$(./mituifee 1)
+[ "$?" = 1 ]||ng "$LINENO"
+
+out=$(./mituifee 6 5)
+[ "$?" = 1 ]||ng "$LINENO"
+
+out=$(./mituifee 6 5 90 2)
 [ "$?" = 1 ]||ng "$LINENO"
 
 [ "${res}" = 0 ]&&echo OK
