@@ -41,7 +41,7 @@ out=$(./mituifee 24 0 90)
 [ "$?" = 0 ]||ng "$LINENO"
 [ "$out" = "7300.0" ]||ng "$LINENO"
 
-out=$(,.mituifee 24 5 90)
+out=$(./mituifee 24 5 90)
 [ "$?" = 0 ]||ng "$LINENO"
 [ "$out" = "21750.0" ]||ng "$LINENO"
 
