@@ -7,11 +7,11 @@ import sys
 x = 0.0
 f= "乗車した"
 t = "の数値を入力してください"
-if len(sys.argv) < 2:
+if len(sys.argv) < 3:
     print(f"入力が足りません、{f}時間と分{t}")
     exit(1)
 elif 2 < len(sys.argv) < 5:
-    x = (-(-float(sys.argv[2]) // 10) + float(sys.argv[1]) * 6)150
+    x = (-(-float(sys.argv[2]) // 10) + float(sys.argv[1]) * 6) * 150
     if 4280 <= x <= 5400:
         x = 4280
     elif 5700 <= x <= 10800:

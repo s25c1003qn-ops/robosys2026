@@ -18,26 +18,26 @@ out=$(./mituifee 1 35)
 [ "${out}" = "1500.0" ]||ng "$LINENO"
 
 out=$(./mituifee 4 46 90)
-[ "$?" = 0 ]||ng "LINENO"
-[ "${out}" = "4280" ]||ng "$LINENO"
+[ "$?" = 0 ]||ng "$LINENO"
+[ "${out}" = "4280.0" ]||ng "$LINENO"
 
 out=$(./mituifee 6 0 90)
 [ "$?" = 0 ]||ng "$LINENO"
 [ "${out}" = "4280.0" ]||ng "$LINENO"
 
-out=$(,.mituifee 6 5 90)
+out=$(./mituifee 6 5 90)
 [ "$?" = 0 ]||ng "$LINENO"
 [ "$out" = "6320.0" ]||ng "$LINENO"
 
-out=$(,.mituifee 12 0 90)
+out=$(./mituifee 12 0 90)
 [ "$?" = 0 ]||ng "$LINENO"
 [ "$out" = "5700.0" ]||ng "$LINENO"
 
-out=$(,.mituifee 12 5 90)
+out=$(./mituifee 12 5 90)
 [ "$?" = 0 ]||ng "$LINENO"
 [ "$out" = "10950.0" ]||ng "$LINENO"
 
-out=$(,.mituifee 24 0 90)
+out=$(./mituifee 24 0 90)
 [ "$?" = 0 ]||ng "$LINENO"
 [ "$out" = "7300.0" ]||ng "$LINENO"
 
