@@ -27,23 +27,23 @@ out=$(./mituifee 6 0 90)
 
 out=$(./mituifee 6 5 90)
 [ "$?" = 0 ]||ng "$LINENO"
-[ "$out" = "6320.0" ]||ng "$LINENO"
+[ "$out" = "7440.0" ]||ng "$LINENO"
 
 out=$(./mituifee 12 0 90)
 [ "$?" = 0 ]||ng "$LINENO"
-[ "$out" = "5700.0" ]||ng "$LINENO"
+[ "$out" = "7590.0" ]||ng "$LINENO"
 
 out=$(./mituifee 12 5 90)
 [ "$?" = 0 ]||ng "$LINENO"
-[ "$out" = "10950.0" ]||ng "$LINENO"
+[ "$out" = "12840.0" ]||ng "$LINENO"
 
 out=$(./mituifee 24 0 90)
 [ "$?" = 0 ]||ng "$LINENO"
-[ "$out" = "7300.0" ]||ng "$LINENO"
+[ "$out" = "9190.0" ]||ng "$LINENO"
 
 out=$(./mituifee 24 5 90)
 [ "$?" = 0 ]||ng "$LINENO"
-[ "$out" = "21750.0" ]||ng "$LINENO"
+[ "$out" = "23640.0" ]||ng "$LINENO"
 
 out=$(./mituifee)
 [ "$?" = 1 ]||ng "$LINENO"
