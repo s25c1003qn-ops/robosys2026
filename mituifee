@@ -11,9 +11,9 @@ if len(sys.argv) < 3:
     print(f"入力が足りません、{f}時間と分{t}")
     exit(1)
 elif len(sys.argv) == 3:
-    x = -(-float(sys.argv[2]) // 10) * 10 / 60 + float(sys.argv[1])
-    if x <= 6:
-        x *= 900
+    x = -(-float(sys.argv[2]) // 10) * 10 + float(sys.argv[1]) * 60
+    if x <= 360:
+        x *= 15
         if x >= 4280:
             x = 4280
     else:
