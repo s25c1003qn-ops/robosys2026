@@ -10,8 +10,13 @@ ng () {
 res=0
 
 out=$(./mituifee 1 30)
-[ "$?" = 0 ]||ng"$LINENO"
+[ "$?" = 0 ]||ng "$LINENO"
 [ "${out}" = "1350.0" ]||ng "$LINENO"
+
+out=$(./mituifee 1 35)
+[ "$?" = 0]||ng "$LINENO"
+[ "${out}" = "1350.0"]||ng "$LINENO"
+
 out=$(./mituifee 4 46)
 [ "$?" = 0 ]||ng "LINENO"
 [ "${out}" = "4280" ]||ng "$LINENO"
