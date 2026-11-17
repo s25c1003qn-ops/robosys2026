@@ -15,7 +15,7 @@ out=$(./mituifee 1 30)
 
 out=$(./mituifee 1 35)
 [ "$?" = 0 ]||ng "$LINENO"
-[ "${out}" = "1500.0"]||ng "$LINENO"
+[ "${out}" = "1500.0" ]||ng "$LINENO"
 
 out=$(./mituifee 4 46)
 [ "$?" = 0 ]||ng "LINENO"
