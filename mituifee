@@ -18,7 +18,7 @@ elif 2 < len(sys.argv) < 5:
         x = 5700
     elif 7300 <= x <= 21600:
         x = 7300
-    if x > 360:
+    if x > 5400:
         if len(sys.argv) < 5:
             x += float(sys.argv[3]) * 21
         else:
