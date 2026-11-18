@@ -41,11 +41,12 @@ elif 3 < len(sys.argv) < 6:
         y = min(d + (x - 720) * a, e)
     else:
         y = e + (x - 1440) * a
-    if x < 360:
+    if x > 360:
+        if len(sys.argv) == 5:
         y += float(sys.argv[4]) * f
-    else:
-        print(f"6時間以上なので距離料金含めて計算する必要があります、{f}")
-        exit(1)
+        else:
+            print(f"6時間以上なので距離料金含めて計算する必要があります、{f}")
+            exit(1)
 else:
     print(f"入力が多すぎます、{f}")
     exit(1)
