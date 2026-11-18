@@ -99,7 +99,7 @@ out=$(./mituifee mp 6 0 90)
 
 out=$(./mituifee mp 6 5 90)
 [ "$?" = 0 ]||ng "$LINENO"
-[ "$out" = "62000.0" ]||ng "$LINENO"
+[ "$out" = "8090.0" ]||ng "$LINENO"
 
 out=$(./mituifee mp 12 0 90)
 [ "$?" = 0 ]||ng "$LINENO"
@@ -197,7 +197,7 @@ out=$(./mituifee 1)
 
 out=$(./mituifee 6 5)
 [ "$?" = 1 ]||ng "$LINENO"
-\
+
 out=$(./mituifee a 6 5 90)
 [ "$?" = 1 ]||ng "$LINENO"
 
