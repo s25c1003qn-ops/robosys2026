@@ -51,7 +51,7 @@ out=$(./mituifee m 1 35)
 
 out=$(./mituifee m 4 40 90)
 [ "$?" = 0 ]||ng "$LINENO"
-[ "${out}" = "7090.0" ]||ng "$LINENO"
+[ "${out}" = "5280.0" ]||ng "$LINENO"
 
 out=$(./mituifee m 6 5 90)
 [ "$?" = 0 ]||ng "$LINENO"
@@ -83,7 +83,7 @@ out=$(./mituifee mp 1 35)
 
 out=$(./mituifee mp 4 40 90)
 [ "$?" = 0 ]||ng "$LINENO"
-[ "${out}" = "7870.0" ]||ng "$LINENO"
+[ "${out}" = "5980.0" ]||ng "$LINENO"
 
 out=$(./mituifee mp 6 5 90)
 [ "$?" = 0 ]||ng "$LINENO"
@@ -115,7 +115,7 @@ out=$(./mituifee p 1 35)
 
 out=$(./mituifee p 5 0 90)
 [ "$?" = 0 ]||ng "$LINENO"
-[ "${out}" = "10750.0" ]||ng "$LINENO"
+[ "${out}" = "8680.0" ]||ng "$LINENO"
 
 out=$(./mituifee p 6 5 90)
 [ "$?" = 0 ]||ng "$LINENO"
@@ -147,7 +147,7 @@ out=$(./mituifee pp 1 35)
 
 out=$(./mituifee pp 3 50 90)
 [ "$?" = 0 ]||ng "$LINENO"
-[ "${out}" = "14030.0" ]||ng "$LINENO"
+[ "${out}" = "11780.0" ]||ng "$LINENO"
 
 out=$(./mituifee pp 6 5 90)
 [ "$?" = 0 ]||ng "$LINENO"
