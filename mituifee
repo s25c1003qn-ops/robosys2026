@@ -10,39 +10,46 @@ extra_arg = sys.argv if len(sys.argv) > 1 else "追加無し"
 
 x = 0.0
 y = 0.0
-f= "車両のクラス(ベーシック(b)、ミドル(m)、ミドルプラス(mp)、プレミアム(p)、プレミアムプラス(PP))、乗車した時間と分、6時間以上の場合は走行距離も入力してください"
+f= "ナイトパックか(n)そうでない(d)か、車両のクラス(ベーシック(b)、ミドル(m)、ミドルプラス(mp)、プレミアム(p)、プレミアムプラス(PP))、乗車した時間と分、6時間以上の場合は走行距離も入力してください"
 
-if len(sys.argv) < 4:
+if len(sys.argv) < 5:
     print(f"入力が足りません、{f}")
     exit(1)
-elif 3 < len(sys.argv) < 6:
-    x = -(-float(sys.argv[3]) // 10) * 10 + float(sys.argv[2]) * 60
+elif 4 < len(sys.argv) < 7:
+    x = -(-float(sys.argv[4]) // 10) * 10 + float(sys.argv[3]) * 60
 
     rates = {
-        "b": (15, 4280.0, 5700.0, 7300.0, 21),
-        "m": (19, 5280.0, 7200.0, 8500.0, 21),
-        "mp": (22, 5980.0, 8300.0, 10100.0, 21),
-        "p": (29, 8680.0, 9900.0, 12100.0, 23),
-        "pp": (52, 11780.0, 13900.0, 16900.0, 25),
+        "b": (15, 4280.0, 5700.0, 7300.0, 21, 3200),
+        "m": (19, 5280.0, 7200.0, 8500.0, 21, 3800),
+        "mp": (22, 5980.0, 8300.0, 10100.0, 21, 4500),
+        "p": (29, 8680.0, 9900.0, 12100.0, 23, NULL),
+        "pp": (52, 11780.0, 13900.0, 16900.0, 25, NULL),
     }
 
-    c = sys.argv[1]
+    c = sys.argv[2]
     if c not in rates:
         print(f"車種クラスを正しく入力してください、{f}")
         exit(1)
 
-    a, b, d, e, f = rates[c]
+    a, b, d, e, f, g = rates[c]
 
-    if x <= 360:
-        y = min(x * a, b)
-    elif x <= 720:
-        y = min(b + (x - 360) * a, d)
-    elif x <= 1440:
-        y = min(d + (x - 720) * a, e)
+    if sys.argv[1] == d:
+        if x <= 360:
+            y = min(x * a, b)
+        elif x <= 720:
+            y = min(b + (x - 360) * a, d)
+        elif x <= 1440:
+            y = min(d + (x - 720) * a, e)
+        else:
+            y = e + (x - 1440) * a
+    elif sys.argv[1] == n && sys.argv[2] == b, m, mp:
+        y = min(x * a, g)
+    elif sys.argv[1] == n && sys.argv[2] == p, pp:
+        print(f"プレミアムおよびプレミアムプラスにナイトパックはありません、{f}")
     else:
-        y = e + (x - 1440) * a
+        print(f"ナイトパックかどうか判別できません、{f}")
     if x > 360:
-        if len(sys.argv) == 5:
+        if len(sys.argv) == 6:
             y += float(sys.argv[4]) * f
         else:
             print(f"6時間以上なので距離料金含めて計算する必要があります、{f}")
