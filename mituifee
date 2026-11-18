@@ -46,6 +46,7 @@ elif 4 < len(sys.argv) < 7:
         y = min(x * a, g)
     elif sys.argv[1] == "n" and sys.argv[2] in ("p", "pp"):
         print(f"プレミアムおよびプレミアムプラスにナイトパックはありません、{f}")
+        exit(1)
     else:
         print(f"ナイトパックかどうか判別できません、{f}")
         exit(1)
