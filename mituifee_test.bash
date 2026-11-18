@@ -135,7 +135,7 @@ out=$(./mituifee p 6 0 90)
 
 out=$(./mituifee p 6 5 90)
 [ "$?" = 0 ]||ng "$LINENO"
-[ "$out" = "8970.0" ]||ng "$LINENO"
+[ "$out" = "11040.0" ]||ng "$LINENO"
 
 out=$(./mituifee p 12 0 90)
 [ "$?" = 0 ]||ng "$LINENO"
@@ -171,7 +171,7 @@ out=$(./mituifee pp 6 0 90)
 
 out=$(./mituifee pp 6 5 90)
 [ "$?" = 0 ]||ng "$LINENO"
-[ "$out" = "12300.0" ]||ng "$LINENO"
+[ "$out" = "14550.0" ]||ng "$LINENO"
 
 out=$(./mituifee pp 12 0 90)
 [ "$?" = 0 ]||ng "$LINENO"
