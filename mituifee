@@ -22,8 +22,8 @@ elif 4 < len(sys.argv) < 7:
         "b": (15, 4280.0, 5700.0, 7300.0, 21, 3200),
         "m": (19, 5280.0, 7200.0, 8500.0, 21, 3800),
         "mp": (22, 5980.0, 8300.0, 10100.0, 21, 4500),
-        "p": (29, 8680.0, 9900.0, 12100.0, 23, NULL),
-        "pp": (52, 11780.0, 13900.0, 16900.0, 25, NULL),
+        "p": (29, 8680.0, 9900.0, 12100.0, 23, None),
+        "pp": (52, 11780.0, 13900.0, 16900.0, 25, None),
     }
 
     c = sys.argv[2]
@@ -33,7 +33,7 @@ elif 4 < len(sys.argv) < 7:
 
     a, b, d, e, f, g = rates[c]
 
-    if sys.argv[1] == d:
+    if sys.argv[1] == "d":
         if x <= 360:
             y = min(x * a, b)
         elif x <= 720:
@@ -42,15 +42,16 @@ elif 4 < len(sys.argv) < 7:
             y = min(d + (x - 720) * a, e)
         else:
             y = e + (x - 1440) * a
-    elif sys.argv[1] == n && sys.argv[2] == b, m, mp:
+    elif sys.argv[1] == "n" and sys.argv[2] in ("b", "m", "mp"):
         y = min(x * a, g)
-    elif sys.argv[1] == n && sys.argv[2] == p, pp:
+    elif sys.argv[1] == "n" and sys.argv[2] in ("p", "pp"):
         print(f"プレミアムおよびプレミアムプラスにナイトパックはありません、{f}")
     else:
         print(f"ナイトパックかどうか判別できません、{f}")
+        exit(1)
     if x > 360:
         if len(sys.argv) == 6:
-            y += float(sys.argv[4]) * f
+            y += float(sys.argv[5]) * f
         else:
             print(f"6時間以上なので距離料金含めて計算する必要があります、{f}")
             exit(1)

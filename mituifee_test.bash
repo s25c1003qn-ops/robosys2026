@@ -205,6 +205,15 @@ out=$(./mituifee n mp 6 5 90)
 [ "$?" = 0 ]||ng "$LINENO"
 [ "${out}" = "6390.0" ]||ng "$LINENO"
 
+out=$(./mituifee n p 1 30 90)
+[ "$?" = 1 ]||ng "$LINENO"
+
+out=$(./mituifee n pp 1 30 90)
+[ "$?" = 1 ]||ng "$LINENO"
+
+out=$(./mituifee a b 1 30 90)
+[ "$?" = 1 ]||ng "$LINENO"
+
 out=$(./mituifee)
 [ "$?" = 1 ]||ng "$LINENO"
 
