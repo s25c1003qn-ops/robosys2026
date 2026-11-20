@@ -4,10 +4,6 @@
 
 import sys
 
-piped_data = sys.stdin.read().strip()
-
-extra_arg = sys.argv if len(sys.argv) > 1 else "追加無し"
-
 x = 0.0
 y = 0.0
 f= "ナイトパックか(n)そうでない(d)か、車両のクラス(ベーシック(b)、ミドル(m)、ミドルプラス(mp)、プレミアム(p)、プレミアムプラス(PP))、乗車した時間と分、6時間以上の場合は走行距離も入力してください"
