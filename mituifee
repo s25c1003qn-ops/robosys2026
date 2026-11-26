@@ -6,11 +6,11 @@ import sys
 
 x = 0
 y = 0
-f= "ナイトパックか(n)そうでない(d)か、車両のクラス(ベーシック(b)、ミドル(m)、ミドルプラス(mp)、プレミアム(p)、プレミアムプラス(PP))、乗車した時間と分、6時間以上の場合は走行距離も入力してください"
+msg= "ナイトパックか(n)そうでない(d)か、車両のクラス(ベーシック(b)、ミドル(m)、ミドルプラス(mp)、プレミアム(p)、プレミアムプラス(PP))、乗車した時間と分、6時間以上の場合は走行距離も入力してください"
 
 if len(sys.argv) < 5:
-    print(f"入力が足りません、{f}")
-    exit(1)
+    print(f"入力が足りません、{msg}", file=sys.stderr)
+    sys.exit(1)
 elif 4 < len(sys.argv) < 7:
     x = -(-float(sys.argv[4]) // 10) * 10 + float(sys.argv[3]) * 60
 
@@ -24,8 +24,8 @@ elif 4 < len(sys.argv) < 7:
 
     c = sys.argv[2]
     if c not in rates:
-        print(f"車種クラスを正しく入力してください、{f}")
-        exit(1)
+        print(f"車種クラスを正しく入力してください、{msg}", file=sys.stderr)
+        sys.exit(1)
 
     a, b, d, e, f, g = rates[c]
 
@@ -41,19 +41,20 @@ elif 4 < len(sys.argv) < 7:
     elif sys.argv[1] == "n" and sys.argv[2] in ("b", "m", "mp"):
         y = min(x * a, g)
     elif sys.argv[1] == "n" and sys.argv[2] in ("p", "pp"):
-        print(f"プレミアムおよびプレミアムプラスにナイトパックはありません、{f}")
-        exit(1)
+        print(f"プレミアムおよびプレミアムプラスにナイトパックはありません、{msg}", file=sys.stderr)
+        sys.exit(1)
     else:
-        print(f"ナイトパックかどうか判別できません、{f}")
-        exit(1)
+        print(f"ナイトパックかどうか判別できません、{msg}", file=sys.stderr)
+        sys.exit(1)
     if x > 360:
         if len(sys.argv) == 6:
             y += float(sys.argv[5]) * f
         else:
-            print(f"6時間以上なので距離料金含めて計算する必要があります、{f}")
-            exit(1)
+            print(f"6時間以上なので距離料金含めて計算する必要があります、{msg}", file=sys.stderr)
+            sys.exit(1)
 else:
-    print(f"入力が多すぎます、{f}")
-    exit(1)
+    print(f"入力が多すぎます、{msg}", file=sys.stderr)
+    sys.exit(1)
+
 print(float(y))
 exit(0)
