@@ -56,10 +56,10 @@ chmod +x mituifee
 
 ## テストの実行
 
-付属のテストスクリプト（`mituifeetest.bash`）で正常系・境界値・異常系の動作を確認できます。
+付属のテストスクリプト（`mituifee_test.bash`）で正常系・境界値・異常系の動作を確認できます。
 
 ```bash
-bash -xv ./mituifeetest.bash
+bash -xv ./mituifee_test.bash
 ```
 
 ## 必要な環境
