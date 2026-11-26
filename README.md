@@ -15,9 +15,9 @@
 ## インストール方法
 
 ```bash
-git clone https://github.com
-cd robosys2026
-chmod +x mituifee
+$ git clone https://github.com
+$ cd robosys2026
+$ chmod +x mituifee
 ```
 
 ### 使い方
@@ -25,7 +25,7 @@ chmod +x mituifee
 引数には「ナイトパックの適応の有無」「車両クラス」、「時間」と「分」、時間が６時間を超える場合は「走行距離」を指定して実行します。
 
 ```bash
-\$ ./mituifee <ナイトパックの適応の有無> <車両クラス> <時間> <分> [走行距離(km)]
+$ ./mituifee <ナイトパックの適応の有無> <車両クラス> <時間> <分> [走行距離(km)]
 ```
 
 * 車種クラスの引数が存在しないもの、または引数が不足・過剰な場合はエラーメッセージを表示し、終了ステータス'1'を返します。
@@ -59,7 +59,7 @@ chmod +x mituifee
 付属のテストスクリプト（`mituifee_test.bash`）で正常系・境界値・異常系の動作を確認できます。
 
 ```bash
-bash -xv ./mituifee_test.bash
+$ bash -xv ./mituifee_test.bash
 ```
 
 ## 必要な環境
