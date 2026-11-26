@@ -1,5 +1,5 @@
 #! /usr/bin/python3
-# SPDX-FileCopyrightText: 2026 Abe Toshiaki
+# SPDX-FileCopyrightText: 2026 Toshiaki Abe
 # SPDX-License-Identifier: BSD-3-Clause
 
 import sys
