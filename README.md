@@ -54,23 +54,12 @@ chmod +x mituifee
 
 ---
 
-### plus
-標準出力から受け取った数値の合計を計算するコマンドです。
-
-### 使い方
-```bash
-\$ SEQ 5 | ./PLUS
-15
-```
-
----
-
 ## テストの実行
 
-付属のテストスクリプト（`test.bash`）で正常系・境界値・異常系の動作を確認できます。
+付属のテストスクリプト（`mituifeetest.bash`）で正常系・境界値・異常系の動作を確認できます。
 
 ```bash
-bash -xv ./test.bash
+bash -xv ./mituifeetest.bash
 ```
 
 ## 必要な環境
